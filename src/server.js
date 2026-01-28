@@ -17,7 +17,29 @@ app.use(express.json({ limit: '10mb' }));
 
 app.use('/icons', express.static(join(__dirname, '../icons')));
 
-app.get('/', async (req, res, next) => {
+app.get('/', (req, res) => {
+  res.json({
+    service: 'Receipt Generator API',
+    version: '1.0.0',
+    status: 'running',
+    endpoints: {
+      health: '/api/health',
+      generateReceipt: 'POST /api/receipt',
+      generateBatch: 'POST /api/receipts/batch',
+      demo: '/dev (development only)'
+    },
+    documentation: 'https://github.com/YOUR_USERNAME/receipt-generator'
+  });
+});
+
+app.get('/dev', async (req, res, next) => {
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(404).json({
+      error: 'Not Found',
+      message: 'Demo route is only available in development environment'
+    });
+  }
+
   try {
     const { default: templateRenderer } = await import('./services/templateRenderer.js');
     const { default: screenshotService } = await import('./services/screenshotService.js');
