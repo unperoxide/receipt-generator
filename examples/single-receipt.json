@@ -1,0 +1,15 @@
+{
+  "type": "send-money",
+  "data": {
+    "recipientNumber": "01712345678",
+    "recipientName": "John Doe",
+    "avatar": "J",
+    "time": "09:45pm 28/01/26",
+    "transactionId": "TEST123456",
+    "amount": "1,000.00",
+    "fee": "10.00",
+    "total": "1,010.00",
+    "newBalance": "5,250.00",
+    "reference": "Monthly payment"
+  }
+}

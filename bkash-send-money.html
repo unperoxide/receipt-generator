@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bKash Transaction Receipt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Roboto", "Segoe UI", "sans-serif"],
+            }
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <!-- Mobile Screen Wrapper -->
+    <div
+      class="w-[420px] bg-white h-screen max-h-[900px] shadow-2xl overflow-hidden flex flex-col relative font-sans text-sm md:text-base"
+    >
+      <img src="https://synth.epyk.me/image-magick/app?output=image&quality=2&color=%23111827&background=%23ffffff&time=15%3A28&percentage=50&battery_fill=white&bolt=false&network=WiFi&signal=2" alt="Status Bar" class="">
+      <!-- Scrollable Content Area -->
+      <div class="flex-1 overflow-y-auto pb-8 no-scrollbar">
+        <!-- Header Section -->
+        <div class="pt-12 px-6 pb-6 flex items-start justify-between">
+          <div class="text-[20px] font-light">
+            <span class="text-[#E2136E]">Your </span>
+            <span class="text-[#E2136E] font-medium">Send Money</span>
+            <span class="text-[#E2136E]"> is </span>
+            <span class="text-[#008631] font-medium">successful</span>
+          </div>
+          <div class="flex-shrink-0 mt-1">
+            <img src="/icons/success_icon.svg" class="w-9 h-9" alt="Success Icon" />
+          </div>
+        </div>
+
+        <!-- Recipient Section -->
+        <div class="px-5 mt-8 mb-8 flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div
+              class="w-12 h-12 bg-[#9FA8DA] rounded-full flex items-center justify-center text-white text-xl"
+            >
+              0
+            </div>
+            <div class="flex flex-col">
+              <span class="font-medium antialiased text-gray-800 text-[14px]"
+                >01325960182</span
+              >
+              <span class="text-gray-500 text-[14px] font-light">01325960182</span>
+            </div>
+          </div>
+          <button
+            class="flex items-center gap-2 px-4 py-2 border-[1.4px] border-[#E2136E] rounded-[8px] text-[#E2136E] font-medium antialiased active:bg-pink-50 transition-colors"
+          >
+            <img src="/icons/call.png" class="w-4 h-4 mr-0.5" alt="Call" />
+            <span class="text-xs">Call</span>
+          </button>
+        </div>
+
+        <!-- Transaction Details Grid -->
+        <div class="border-t border-[#f0f0f0] border-b mb-6">
+          <!-- Row 1 -->
+          <div class="flex border-b border-[#f0f0f0]">
+            <div class="flex-1 px-5 py-3 border-r border-[#f0f0f0]">
+              <div class="text-[#666666] text-xs mb-1.5">Time</div>
+              <div class="font-medium antialiased text-[15px]">
+                08:38pm 12/09/25
+              </div>
+            </div>
+            <div class="flex-1 px-5 py-3">
+              <div class="text-[#666666] text-xs mb-1.5">Transaction ID</div>
+              <div class="flex items-center gap-0.5">
+                <span class="text-gray-900 text-[15px]"
+                  >CIC3CR9325</span
+                >
+                <img src="/icons/customer_copy.svg" class="w-5 h-5" alt="Copy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="flex border-b border-[#f0f0f0]">
+            <div class="flex-1 px-5 py-3 border-r border-[#f0f0f0]">
+              <div class="text-[#666666] text-xs mb-1.5">Total</div>
+              <div
+                class="text-gray-900 text-[14px] flex items-center"
+              >
+                ৳5,105.00
+              </div>
+              <div class="text-gray-400 text-[13px] mt-0.5 flex items-center">
+                ৳5,100.00 + ৳5.00
+              </div>
+            </div>
+            <div class="flex-1 px-5 py-3">
+              <div class="text-[#666666] text-xs mb-1.5">New Balance</div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="text-gray-900 text-[14px] flex items-center"
+                >
+                  ৳65.53
+                </span>
+                <img src="/icons/hide.svg" class="w-5 h-5" alt="Copy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="flex">
+            <div class="flex-1 px-5 py-3 border-r border-[#f0f0f0]">
+              <div class="text-[#666666] text-xs">Reference</div>
+              <div class="h-5"></div>
+            </div>
+            <div class="flex-1 px-5 py-3">
+              <!-- Empty cell to maintain grid structure -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="px-5 flex gap-4 mb-8">
+          <button
+            class="flex-1 flex items-center justify-center gap-2 py-2.5 border border-[#E2136E] rounded-[8px] text-[#E2136E] font-medium antialiased bg-white active:bg-pink-50 transition-colors"
+          >
+            <img
+              src="/icons/recurring_payment.svg"
+              alt="Auto Pay"
+            />
+            <span class="text-[14px]">Enable Auto Pay</span>
+          </button>
+
+          <button
+            class="flex-1 flex items-center justify-center gap-2 py-2.5 border border-[#E2136E] rounded-[8px] text-[#E2136E] font-medium antialiased bg-white active:bg-pink-50 transition-colors"
+          >
+            <img
+              src="/icons/share.svg"
+              alt="Share"
+            />
+            <span class="text-[15px]">Share</span>
+          </button>
+        </div>
+
+        <!-- Rewards Section -->
+        <div class="flex flex-col items-center justify-center px-4 pb-12">
+          <div
+            class="w-8 h-8 bg-[#E2136E] rounded-full flex items-center justify-center mb-6"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="white"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+          </div>
+          <div class="text-center text-[15px] antialiased">
+            <span class="text-gray-500 block mb-0.5">You have earned</span>
+            <span class="font-medium text-gray-900 block text-[18px] mb-1"
+              >bKash Reward Points</span
+            >
+            <span class="text-gray-600">To use your points, check your </span>
+            <a href="#" class="text-[#E2136E] border-b border-[#E2136E] pb-0.5"
+              >bKash Rewards</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Sticky Button -->
+      <div class="absolute bottom-0 w-full">
+        <button
+          class="w-full bg-[#E2136E] text-white rounded-t-lg py-3 px-6 flex items-center justify-between hover:bg-[#c2105e] transition-colors"
+        >
+          <span class="text-[17px] font-medium antialiased">Back to Home</span>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

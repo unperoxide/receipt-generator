@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}bKash Receipt{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Roboto", "Segoe UI", "sans-serif"],
+          }
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="w-[420px] bg-white h-screen max-h-[900px] shadow-2xl overflow-hidden flex flex-col relative font-sans text-sm md:text-base">
+    
+    <div class="flex-1 overflow-y-auto pb-8 no-scrollbar">
+      {% block header %}{% endblock %}
+      {% block recipient %}{% endblock %}
+      {% block details %}{% endblock %}
+      {% block actions %}{% endblock %}
+      {% block footer_content %}{% endblock %}
+    </div>
+    
+    {% block sticky_footer %}
+    {% include "partials/footer-button.njk" %}
+    {% endblock %}
+  </div>
+</body>
+</html>

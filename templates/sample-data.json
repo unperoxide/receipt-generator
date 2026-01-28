@@ -1,0 +1,14 @@
+{
+  "bkash_send_money": {
+    "recipientNumber": "01325960182",
+    "recipientName": "01325960182",
+    "avatar": "0",
+    "time": "08:38pm 12/09/25",
+    "transactionId": "CIC3CR9325",
+    "amount": "5,100.00",
+    "fee": "5.00",
+    "total": "5,105.00",
+    "newBalance": "65.53",
+    "reference": ""
+  }
+}

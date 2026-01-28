@@ -1,0 +1,115 @@
+{% extends "layouts/bkash-base.njk" %}
+
+{% block title %}Send Money Receipt{% endblock %}
+
+{% block header %}
+<div class="pt-32 px-6 pb-6 flex items-start justify-between">
+  <div class="text-[20px] font-light">
+    <span class="text-[#E2136E]">Your </span>
+    <span class="text-[#E2136E] font-medium">Send Money</span>
+    <span class="text-[#E2136E]"> is </span>
+    <span class="text-[#008631] font-medium">successful</span>
+  </div>
+  <div class="flex-shrink-0">
+    <img src="/icons/success_icon.svg" class="w-9 h-9" alt="Success" />
+  </div>
+</div>
+{% endblock %}
+
+{% block recipient %}
+<div class="px-5 mt-8 mb-8 flex items-center justify-between">
+  <div class="flex items-center gap-4">
+    <div class="w-12 h-12 bg-[#9FA8DA] rounded-full flex items-center justify-center text-white text-xl">
+      {{ avatar | default('0') }}
+    </div>
+    <div class="flex flex-col">
+      <span class="font-medium antialiased text-gray-800 text-[14px]">{{ recipientNumber }}</span>
+      <span class="text-gray-500 text-[14px] font-light">{{ recipientName }}</span>
+    </div>
+  </div>
+  <button class="flex items-center gap-2 px-4 py-2 border-[1.4px] border-[#E2136E] rounded-[8px] text-[#E2136E] font-medium antialiased active:bg-pink-50 transition-colors">
+    <img src="/icons/call.png" class="w-4 h-4 mr-0.5" alt="Call" />
+    <span class="text-xs">Call</span>
+  </button>
+</div>
+{% endblock %}
+
+{% block details %}
+<div class="border-t border-[#f0f0f0] border-b mb-6">
+  <div class="flex border-b border-[#f0f0f0]">
+    <div class="flex-1 px-5 py-3 border-r border-[#f0f0f0]">
+      <div class="text-[#666666] text-xs mb-1.5">Time</div>
+      <div class="font-medium antialiased text-[15px]">
+        {{ time }}
+      </div>
+    </div>
+    <div class="flex-1 px-5 py-3">
+      <div class="text-[#666666] text-xs mb-1.5">Transaction ID</div>
+      <div class="flex items-center gap-0.5">
+        <span class="text-gray-900 text-[15px]">{{ transactionId }}</span>
+        <img src="/icons/customer_copy.svg" class="w-5 h-5" alt="Copy" />
+      </div>
+    </div>
+  </div>
+
+  <div class="flex border-b border-[#f0f0f0]">
+    <div class="flex-1 px-5 py-3 border-r border-[#f0f0f0]">
+      <div class="text-[#666666] text-xs mb-1.5">Total</div>
+      <div class="text-gray-900 text-[14px]">
+        ৳{{ total }}
+      </div>
+      <div class="text-gray-400 text-[13px] mt-0.5">
+        ৳<span>{{ amount }}</span> + ৳<span>{{ fee }}</span>
+      </div>
+    </div>
+    <div class="flex-1 px-5 py-3">
+      <div class="text-[#666666] text-xs mb-1.5">New Balance</div>
+      <div class="flex items-center gap-2">
+        <span class="text-gray-900 text-[14px]">
+          ৳{{ newBalance }}
+        </span>
+        <img src="/icons/hide.svg" class="w-5 h-5" alt="Hide" />
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="flex-1 px-5 py-3 border-r border-[#f0f0f0]">
+      <div class="text-[#666666] text-xs">Reference</div>
+      <div class="h-5">{{ reference }}</div>
+    </div>
+    <div class="flex-1 px-5 py-3"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block actions %}
+<div class="px-5 flex gap-4 mb-8">
+  <button class="flex-1 flex items-center justify-center gap-2 py-3 border border-[#E2136E] rounded-[8px] text-[#E2136E] font-medium antialiased bg-white active:bg-pink-50 transition-colors">
+    <img src="/icons/recurring_payment.svg" alt="Auto Pay" />
+    <span class="text-[14px]">Enable Auto Pay</span>
+  </button>
+
+  <button class="flex-1 flex items-center justify-center gap-2 py-3 border border-[#E2136E] rounded-[8px] text-[#E2136E] font-medium antialiased bg-white active:bg-pink-50 transition-colors">
+    <img src="/icons/share.svg" alt="Share" />
+    <span class="text-[15px]">Share</span>
+  </button>
+</div>
+{% endblock %}
+
+{% block footer_content %}
+<div class="flex flex-col items-center justify-center px-4 pb-12">
+  <div class="w-10 h-10 bg-[#E2136E] rounded-full flex items-center justify-center mb-4">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+    </svg>
+  </div>
+  <div class="h-[3px] w-[25px] bg-gray-200 rounded-[50%] mb-2"></div>
+  <div class="text-center text-[15px] antialiased">
+    <span class="text-gray-500 block mb-0.5">You have earned</span>
+    <span class="font-medium text-gray-900 block text-[18px] mb-1">bKash Reward Points</span>
+    <span class="text-gray-600">To use your points, check your </span>
+    <a href="#" class="text-[#E2136E] border-b border-[#E2136E] pb-0.5">bKash Rewards</a>
+  </div>
+</div>
+{% endblock %}
